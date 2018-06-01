@@ -30,7 +30,6 @@ public class PksMasterDiscoveryClient implements DiscoveryClient {
 	public List<ServiceInstance> getInstances(String serviceId) {
 		return this.pksClusterSynchronizer.getClusters().stream()
 				.filter(c -> Objects.equals(serviceId, c.getName()))
-				.filter(c -> Objects.equals("succeeded", c.getLastActionState()))
 				.flatMap(c -> c.getKubernetesMasterIps().stream()
 						.map(ip -> new DefaultServiceInstance(c.getName(), ip,
 								c.getParameters().getKubernetesMasterPort(), true,
