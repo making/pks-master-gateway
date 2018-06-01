@@ -29,9 +29,10 @@ public class PksMasterRouteDefinitionLocator implements RouteDefinitionLocator {
 					RouteDefinition routeDefinition = new RouteDefinition();
 					routeDefinition.setId(cluster.getUuid());
 					routeDefinition.setUri(URI.create("lb://" + cluster.getName()));
-					routeDefinition.setPredicates(Collections
-							.singletonList(new PredicateDefinition("Host=" + cluster
-									.getParameters().getKubernetesMasterHost())));
+					routeDefinition.setPredicates(
+							Collections.singletonList(new PredicateDefinition("Host="
+									+ cluster.getParameters().getKubernetesMasterHost()
+									+ "*")));
 					routeDefinition.setFilters(Collections
 							.singletonList(new FilterDefinition("PreserveHostHeader")));
 					return routeDefinition;
