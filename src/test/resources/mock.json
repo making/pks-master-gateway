@@ -1,0 +1,38 @@
+[
+  {
+    "name": "pks-tmaki",
+    "plan_name": "small",
+    "last_action": "CREATE",
+    "last_action_state": "succeeded",
+    "last_action_description": "Instance provisioning completed",
+    "uuid": "ceb9dd1e-cbc3-4dcb-b541-33993ef96d27",
+    "kubernetes_master_ips": [
+      "192.168.20.10"
+    ],
+    "parameters": {
+      "kubernetes_master_host": "pks-tmaki.ik.am",
+      "kubernetes_master_port": 8443,
+      "worker_haproxy_ip_addresses": null,
+      "kubernetes_worker_instances": 1,
+      "authorization_mode": null
+    }
+  },
+  {
+    "name": "pks-wsuser01",
+    "plan_name": "small",
+    "last_action": "CREATE",
+    "last_action_state": "succeeded",
+    "last_action_description": "Instance provisioning completed",
+    "uuid": "ddf00eb1-f2ea-4ff5-864d-3681757d5868",
+    "kubernetes_master_ips": [
+      "192.168.20.12"
+    ],
+    "parameters": {
+      "kubernetes_master_host": "pks-wsuser01.ik.am",
+      "kubernetes_master_port": 8443,
+      "worker_haproxy_ip_addresses": null,
+      "kubernetes_worker_instances": 1,
+      "authorization_mode": null
+    }
+  }
+]
