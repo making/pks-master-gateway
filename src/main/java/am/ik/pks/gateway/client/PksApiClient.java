@@ -63,6 +63,6 @@ public class PksApiClient {
 				.flatMapMany(token -> this.webClient.get()
 						.uri(this.props.getApiUrl() + "/v1/clusters")
 						.header(HttpHeaders.AUTHORIZATION, "bearer " + token).retrieve()
-						.bodyToFlux(PksCluster.class));
+						.bodyToFlux(PksCluster.class)).log("cluster");
 	}
 }
