@@ -34,7 +34,8 @@ public class PksMasterLoadBalancerClient implements LoadBalancerClient {
 
 	@Override
 	public URI reconstructURI(ServiceInstance instance, URI original) {
-		return DefaultServiceInstance.getUri(instance);
+        URI uri = DefaultServiceInstance.getUri(instance);
+        return URI.create(uri.toString() + original.getPath());
 	}
 
 	@Override
