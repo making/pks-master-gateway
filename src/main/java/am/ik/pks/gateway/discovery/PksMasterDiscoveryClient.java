@@ -41,6 +41,7 @@ public class PksMasterDiscoveryClient implements DiscoveryClient {
 												.getKubernetesMasterHost());
 									}
 								})))
+				.filter(instance -> !Objects.equals(instance.getHost(), "In Progress"))
 				.collect(Collectors.toList());
 	}
 
